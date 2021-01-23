@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
         width: 300,
-        background: '#f2aa4ce1',
         margin: 24,
+        height: 300
     },
     headerSection: {
         display: 'flex'
@@ -33,7 +33,7 @@ function Post({post}) {
     const classes = useStyles();
     
     return (
-        <Card className={classes.root}>
+        <Card elevation={3} className={classes.root}>
             <CardContent>
                 <div className={classes.headerSection}>
                     <div className={classes.id}>
@@ -41,7 +41,6 @@ function Post({post}) {
                         <h3>{post.id}</h3>
                         </Typography>
                     </div>
-
                     <div className={classes.titleSection}>
                         <Typography variant="h5" component="h2">
                         {post.name}
@@ -51,11 +50,9 @@ function Post({post}) {
                         </Typography>  
                     </div>                                                         
                 </div>
-
                 <Typography variant="body2" component="p" className={classes.bodyContent}>
                     {post.body}
                 </Typography>
-
             </CardContent>
     </Card>
     )
